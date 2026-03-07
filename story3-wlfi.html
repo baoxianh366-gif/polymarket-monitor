@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔄 WLFI 左手换右手 | Buffett 调查局</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #fff;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #e94560;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 1px solid #e94560;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        .back-btn:hover { background: rgba(233, 69, 96, 0.2); }
+        .header {
+            background: linear-gradient(135deg, rgba(233, 69, 96, 0.2), rgba(15, 12, 41, 0.8));
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            border: 2px solid rgba(233, 69, 96, 0.5);
+        }
+        .header h1 { color: #e94560; font-size: 2.5em; margin-bottom: 15px; text-shadow: 0 0 20px rgba(233, 69, 96, 0.5); }
+        .content-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .content-section h2 { color: #e94560; margin-bottom: 20px; font-size: 1.8em; border-bottom: 2px solid rgba(233, 69, 96, 0.3); padding-bottom: 10px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 20px 0; }
+        .stat-box { background: rgba(233, 69, 96, 0.1); border: 1px solid rgba(233, 69, 96, 0.3); border-radius: 10px; padding: 20px; text-align: center; }
+        .stat-value { font-size: 2.5em; font-weight: bold; color: #e94560; }
+        .stat-label { color: #aaa; margin-top: 8px; font-size: 0.95em; }
+        .highlight-box { background: rgba(233, 69, 96, 0.1); border-left: 4px solid #e94560; padding: 20px; border-radius: 0 8px 8px 0; margin: 20px 0; }
+        .highlight-box h3 { color: #e94560; margin-bottom: 15px; }
+        .highlight-box ul { list-style: none; color: #ddd; }
+        .highlight-box li { padding: 8px 0; padding-left: 25px; position: relative; }
+        .highlight-box li::before { content: '🔄'; position: absolute; left: 0; }
+        .flow-diagram { background: rgba(0, 0, 0, 0.3); border-radius: 10px; padding: 30px; margin: 20px 0; text-align: center; }
+        .flow-step { background: rgba(233, 69, 96, 0.2); border: 2px solid #e94560; border-radius: 10px; padding: 15px; margin: 10px 0; font-weight: bold; }
+        .flow-arrow { color: #e94560; font-size: 1.5em; margin: 10px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; background: rgba(0, 0, 0, 0.2); border-radius: 10px; overflow: hidden; }
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        th { background: rgba(233, 69, 96, 0.2); color: #e94560; font-weight: bold; }
+        tr:hover { background: rgba(255, 255, 255, 0.05); }
+        .quote-box { background: rgba(0, 0, 0, 0.3); border-left: 4px solid #f39c12; padding: 20px; margin: 20px 0; font-style: italic; }
+        .quote-box cite { display: block; margin-top: 10px; color: #f39c12; font-style: normal; font-weight: bold; }
+        .footer { text-align: center; padding: 30px; color: #666; border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 40px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-btn">← 返回主页</a>
+        
+        <div class="header">
+            <h1>🔄 WLFI 左手换右手</h1>
+            <p class="subtitle">特朗普家族稳定币生意 · 循环交易疑云</p>
+        </div>
+        
+        <!-- 核心数据 -->
+        <div class="content-section">
+            <h2>📊 核心数据</h2>
+            <div class="stat-grid">
+                <div class="stat-box">
+                    <div class="stat-value">$7.5 亿</div>
+                    <div class="stat-label">循环交易金额</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">$5 亿</div>
+                    <div class="stat-label">特朗普家族收益</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">合格</div>
+                    <div class="stat-label">投资者限制</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">20%</div>
+                    <div class="stat-label">早期解锁比例</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 交易结构 -->
+        <div class="content-section">
+            <h2>🔄 交易结构图解</h2>
+            <div class="flow-diagram">
+                <div class="flow-step">
+                    ① World Liberty Financial（特朗普家族控制）
+                </div>
+                <div class="flow-arrow">↓ 收购</div>
+                <div class="flow-step">
+                    ② Alt5 Sigma（支付公司）
+                </div>
+                <div class="flow-arrow">↓ 向外融资</div>
+                <div class="flow-step">
+                    ③ 融资 $7.5 亿美元
+                </div>
+                <div class="flow-arrow">↓ 购买 WLFI 代币</div>
+                <div class="flow-step">
+                    ④ 资金回流至 WLF（特朗普家族）
+                </div>
+                <div class="flow-arrow">↓ 净收益</div>
+                <div class="flow-step" style="background: rgba(39, 174, 96, 0.3); border-color: #27ae60;">
+                    ✅ 特朗普家族收益约 $5 亿美元
+                </div>
+            </div>
+            <div class="highlight-box">
+                <h3>🔍 《华尔街日报》调查要点</h3>
+                <ul>
+                    <li>左手换右手的循环交易模式</li>
+                    <li>在传统金融中极为罕见</li>
+                    <li>被指为典型的市场操控危险信号</li>
+                    <li>投资者可能面临与"特朗普币"类似的风险</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- 产品矩阵 -->
+        <div class="content-section">
+            <h2>📦 WLFI 产品矩阵</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>产品</th>
+                        <th>定位</th>
+                        <th>状态</th>
+                        <th>规模</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>WLFI 代币</strong></td>
+                        <td>治理代币</td>
+                        <td>🟢 已发行</td>
+                        <td>未知</td>
+                    </tr>
+                    <tr>
+                        <td><strong>USD1 稳定币</strong></td>
+                        <td>数字美元</td>
+                        <td>🟢 2026-03 推出</td>
+                        <td>锚定美元资产</td>
+                    </tr>
+                    <tr>
+                        <td><strong>借贷协议</strong></td>
+                        <td>DeFi 借贷</td>
+                        <td>🟡 测试中</td>
+                        <td>待定</td>
+                    </tr>
+                    <tr>
+                        <td><strong>国债资产库</strong></td>
+                        <td>RWA 美债代币</td>
+                        <td>🔵 规划中</td>
+                        <td>目标$10 亿+</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- 叙事升级 -->
+        <div class="content-section">
+            <h2>📈 叙事升级路径</h2>
+            <div class="highlight-box">
+                <h3>从 Meme 币到金融基础设施</h3>
+                <ul>
+                    <li><strong>2025 年及以前</strong> - 特朗普 NFT、Meme 币投机</li>
+                    <li><strong>2026 年</strong> - 稳定币、借贷、国债类金融基础设施</li>
+                    <li><strong>定位跃升</strong> - 从单一借贷协议到"DeFi 超级应用"</li>
+                    <li><strong>目标用户</strong> - 主权投资者、主要机构（非散户）</li>
+                </ul>
+            </div>
+            <div class="quote-box">
+                "USD1 提供了算法和匿名加密项目无法提供的东西——获得以传统金融中的信誉和保护措施为基础的 DeFi 力量。我们提供一种数字美元稳定币，主权投资者和主要机构可以放心地将其整合到他们的战略中，以实现无缝、安全的跨境交易。"
+                <cite>— Zach Witkoff, WLFI 联合创始人</cite>
+            </div>
+        </div>
+        
+        <!-- 监管套利 -->
+        <div class="content-section">
+            <h2>⚖️ 监管套利策略</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>策略</th>
+                        <th>说明</th>
+                        <th>效果</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>合格投资者限制</strong></td>
+                        <td>净资产>$100 万或年收入>$20 万</td>
+                        <td>规避 SEC 证券注册要求</td>
+                    </tr>
+                    <tr>
+                        <td><strong>离岸注册</strong></td>
+                        <td>注册地在监管宽松司法管辖区</td>
+                        <td>避开美国本土严格监管</td>
+                    </tr>
+                    <tr>
+                        <td><strong>流动性限制</strong></td>
+                        <td>早期投资者只能出售 20%</td>
+                        <td>减少短期抛压，稳定价格</td>
+                    </tr>
+                    <tr>
+                        <td><strong>排名游戏</strong></td>
+                        <td>利用 CoinGecko/CMC 排名</td>
+                        <td>吸引资金流入</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- 市场反应 -->
+        <div class="content-section">
+            <h2>📰 市场反应</h2>
+            <div class="highlight-box">
+                <h3>🟡 开局冷淡</h3>
+                <ul>
+                    <li>USD1 于 5 月底在币安上线，但"缺乏资金流入和实际交易需求"</li>
+                    <li>分析师称限制早期投资者只能出售 20% 是"标准流通管理手段"</li>
+                    <li>市场质疑：光靠总统名号并不好使？</li>
+                    <li>投资者担心：与 TRUMP 币类似的"内部人获利"风险</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- 风险警示 -->
+        <div class="content-section">
+            <h2>⚠️ 风险警示</h2>
+            <div class="highlight-box" style="border-left-color: #e74c3c;">
+                <h3>🔴 高风险特征</h3>
+                <ul>
+                    <li>循环交易模式涉嫌市场操控</li>
+                    <li>80% 代币由内部人控制（类似 TRUMP 币）</li>
+                    <li>监管状态不明确，可能面临 SEC 调查</li>
+                    <li>流动性限制可能导致无法及时退出</li>
+                    <li>"DeFi 超级应用"叙事过于宏大，执行风险高</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- 调查进展 -->
+        <div class="content-section">
+            <h2>🔬 调查进展</h2>
+            <div class="stat-grid">
+                <div class="stat-box">
+                    <div class="stat-value">60%</div>
+                    <div class="stat-label">调查进度</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">WSJ</div>
+                    <div class="stat-label">首发媒体</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">SEC</div>
+                    <div class="stat-label">监管关注</div>
+                </div>
+            </div>
+            <div class="highlight-box" style="margin-top: 20px;">
+                <h3>📋 待确认事项</h3>
+                <ul>
+                    <li>循环交易是否违反证券法</li>
+                    <li>SEC 是否会介入调查</li>
+                    <li>USD1 稳定币储备是否充足</li>
+                    <li>WLFI 代币实际流通量</li>
+                    <li>是否有更多关联方未披露</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>🕵️ <strong>Buffett 调查局</strong> · 深度追踪全球金融内幕</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">
+                数据来源：华尔街日报、证券时报、财联社 · 仅供参考，不构成投资建议
+            </p>
+            <p style="margin-top: 10px; font-size: 0.85em; color: #444;">
+                最后更新：2026-03-07 16:30
+            </p>
+        </div>
+    </div>
+</body>
+</html>
