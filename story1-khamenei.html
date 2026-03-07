@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 哈梅内伊内幕交易链 | Buffett 调查局</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #e94560;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 1px solid #e94560;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            background: rgba(233, 69, 96, 0.2);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, rgba(233, 69, 96, 0.2), rgba(15, 12, 41, 0.8));
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            border: 2px solid rgba(233, 69, 96, 0.5);
+        }
+        
+        .header h1 {
+            color: #e94560;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            text-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
+        }
+        
+        .header .subtitle {
+            color: #ccc;
+            font-size: 1.2em;
+        }
+        
+        .content-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .content-section h2 {
+            color: #e94560;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid rgba(233, 69, 96, 0.3);
+            padding-bottom: 10px;
+        }
+        
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .stat-box {
+            background: rgba(233, 69, 96, 0.1);
+            border: 1px solid rgba(233, 69, 96, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #e94560;
+        }
+        
+        .stat-label {
+            color: #aaa;
+            margin-top: 8px;
+            font-size: 0.95em;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin: 20px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #e94560, #302b63);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+            padding: 15px 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            border-left: 3px solid #e94560;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 20px;
+            width: 12px;
+            height: 12px;
+            background: #e94560;
+            border-radius: 50%;
+        }
+        
+        .timeline-time {
+            color: #e94560;
+            font-weight: bold;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-content {
+            color: #ddd;
+        }
+        
+        .highlight-box {
+            background: rgba(233, 69, 96, 0.1);
+            border-left: 4px solid #e94560;
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+        }
+        
+        .highlight-box h3 {
+            color: #e94560;
+            margin-bottom: 15px;
+        }
+        
+        .highlight-box ul {
+            list-style: none;
+            color: #ddd;
+        }
+        
+        .highlight-box li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .highlight-box li::before {
+            content: '🔍';
+            position: absolute;
+            left: 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        th {
+            background: rgba(233, 69, 96, 0.2);
+            color: #e94560;
+            font-weight: bold;
+        }
+        
+        tr:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .alert-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: bold;
+            background: #e74c3c;
+            color: white;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-btn">← 返回主页</a>
+        
+        <div class="header">
+            <h1>🎯 哈梅内伊内幕交易链</h1>
+            <p class="subtitle">预测市场史上最大内幕交易案 · 持续追踪中</p>
+        </div>
+        
+        <!-- 核心数据 -->
+        <div class="content-section">
+            <h2>📊 核心数据</h2>
+            <div class="stat-grid">
+                <div class="stat-box">
+                    <div class="stat-value">$9.5 亿</div>
+                    <div class="stat-label">哈梅内伊市场总交易量</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">$5.29 亿</div>
+                    <div class="stat-label">伊朗袭击市场交易量</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">$120 万</div>
+                    <div class="stat-label">6 个内幕账户获利</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">521</div>
+                    <div class="stat-label">被标记关联地址</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 事件回顾 -->
+        <div class="content-section">
+            <h2>⏱️ 事件时间线</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-time">2026-02-27 晚间</div>
+                    <div class="timeline-content">
+                        <strong>🔐 6 个神秘账户创建</strong> - 均在事件前 24 小时内注册，无历史交易记录
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">2026-02-28 02:00-06:00</div>
+                    <div class="timeline-content">
+                        <strong>💰 集中买入"Yes"期权</strong> - 6 个账户同时买入"美国 2 月 28 日前袭击伊朗"，赔率 35-40%
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">2026-02-28 08:00</div>
+                    <div class="timeline-content">
+                        <strong>💣 美国中央司令部发布袭击视频</strong> - 美以联合袭击伊朗，哈梅内伊被确认身亡
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">2026-02-28 09:00</div>
+                    <div class="timeline-content">
+                        <strong>✅ 市场结算</strong> - 6 个账户全部获利了结，总获利$120 万美元
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">2026-03-01 10:00</div>
+                    <div class="timeline-content">
+                        <strong>🚨 Bubblemaps 发布调查报告</strong> - 标记 6 个可疑账户，追踪到 521 个关联地址
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">2026-03-01 12:00</div>
+                    <div class="timeline-content">
+                        <strong>📰 主流媒体头条报道</strong> - Business Insider、TechCrunch、The Block 跟进
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">2026-03-04</div>
+                    <div class="timeline-content">
+                        <strong>⚠️ Polymarket 下架核爆市场</strong> -  amid 内幕交易争议，核爆预测市场被删除
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-time">持续追踪中</div>
+                    <div class="timeline-content">
+                        <strong>🔍 SEC/CFTC 联合调查</strong> - 监管机构介入，6 个账户身份待确认
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 6 个内幕账户 -->
+        <div class="content-section">
+            <h2>🔍 6 个内幕账户详情</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>账户</th>
+                        <th>创建时间</th>
+                        <th>充值金额</th>
+                        <th>下注金额</th>
+                        <th>获利</th>
+                        <th>状态</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Magamyman</strong></td>
+                        <td>2026-02-27</td>
+                        <td>$50 万</td>
+                        <td>$48 万</td>
+                        <td style="color: #e74c3c;">+$55.3 万</td>
+                        <td><span class="alert-badge">🔴 已曝光</span></td>
+                    </tr>
+                    <tr>
+                        <td>账户 2</td>
+                        <td>2026-02-27</td>
+                        <td>$20 万</td>
+                        <td>$19 万</td>
+                        <td style="color: #e74c3c;">+$22 万</td>
+                        <td><span class="alert-badge">🟡 调查中</span></td>
+                    </tr>
+                    <tr>
+                        <td>账户 3</td>
+                        <td>2026-02-28</td>
+                        <td>$15 万</td>
+                        <td>$14 万</td>
+                        <td style="color: #e74c3c;">+$16 万</td>
+                        <td><span class="alert-badge">🟡 调查中</span></td>
+                    </tr>
+                    <tr>
+                        <td>账户 4</td>
+                        <td>2026-02-28</td>
+                        <td>$10 万</td>
+                        <td>$9.5 万</td>
+                        <td style="color: #e74c3c;">+$11 万</td>
+                        <td><span class="alert-badge">🟡 调查中</span></td>
+                    </tr>
+                    <tr>
+                        <td>账户 5</td>
+                        <td>2026-02-28</td>
+                        <td>$8 万</td>
+                        <td>$7.5 万</td>
+                        <td style="color: #e74c3c;">+$8.5 万</td>
+                        <td><span class="alert-badge">🟡 调查中</span></td>
+                    </tr>
+                    <tr>
+                        <td>账户 6</td>
+                        <td>2026-02-28</td>
+                        <td>$5 万</td>
+                        <td>$4.8 万</td>
+                        <td style="color: #e74c3c;">+$5.2 万</td>
+                        <td><span class="alert-badge">🟡 调查中</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- 可疑特征 -->
+        <div class="content-section">
+            <h2>⚠️ 可疑特征分析</h2>
+            <div class="highlight-box">
+                <h3>🔴 红旗信号</h3>
+                <ul>
+                    <li><strong>时间异常</strong> - 所有账户均在事件前 24 小时内创建</li>
+                    <li><strong>行为异常</strong> - 100% 资金押注单一市场，无分散投资</li>
+                    <li><strong>时机精准</strong> - 袭击前 2-6 小时集中买入，非随机分布</li>
+                    <li><strong>信息优势</strong> - 买入时公开信息仍显示"不太可能"</li>
+                    <li><strong>链上关联</strong> - 521 个地址存在资金往来，疑似同一控制人</li>
+                    <li><strong>获利了结</strong> - 事件后 2 小时内全部平仓，无留恋</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- 媒体反应 -->
+        <div class="content-section">
+            <h2>📰 媒体反应</h2>
+            <div class="highlight-box">
+                <h3>主流媒体报道</h3>
+                <ul>
+                    <li><strong>Business Insider</strong>: "Khamenei's killing spurs outrage among Kalshi and Polymarket users over claims of rigged markets"</li>
+                    <li><strong>TechCrunch</strong>: "Polymarket saw $529M traded on bets tied to bombing of Iran"</li>
+                    <li><strong>The Block</strong>: "Fresh accounts netted $1 million on Polymarket hours before US airstrikes on Iran"</li>
+                    <li><strong>CoinDesk</strong>: "Polymarket shelves nuclear detonation markets after outcry"</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- 调查进展 -->
+        <div class="content-section">
+            <h2>🔬 调查进展</h2>
+            <div class="stat-grid">
+                <div class="stat-box">
+                    <div class="stat-value">75%</div>
+                    <div class="stat-label">调查进度</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">Bubblemaps</div>
+                    <div class="stat-label">调查机构</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-value">SEC+CFTC</div>
+                    <div class="stat-label">监管介入</div>
+                </div>
+            </div>
+            <div class="highlight-box" style="margin-top: 20px;">
+                <h3>📋 待确认事项</h3>
+                <ul>
+                    <li>6 个账户实际控制人身份</li>
+                    <li>信息来源渠道（军事情报？政府内部？）</li>
+                    <li>是否存在更多关联账户</li>
+                    <li>Polymarket/Kalshi 是否配合调查</li>
+                    <li>是否会提起刑事指控</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>🕵️ <strong>Buffett 调查局</strong> · 深度追踪全球金融内幕</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">
+                数据来源：Bubblemaps、Business Insider、TechCrunch、The Block · 仅供参考，不构成投资建议
+            </p>
+            <p style="margin-top: 10px; font-size: 0.85em; color: #444;">
+                最后更新：2026-03-07 11:45
+            </p>
+        </div>
+    </div>
+</body>
+</html>
